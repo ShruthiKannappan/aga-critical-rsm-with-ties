@@ -1,0 +1,40 @@
+Explanation of used datastructures in ManyToManyCriticalRSM.cc 
+
+In ties_propose we have used the existing datastructure of vertexBookKeeping for going through the Pref List 
+- the attribute begin keeps track of the rank an unproposed/marked neighbour of an
+- the attribute end keeps track of the total number of ranks in the pref List
+- the attribute tied_index keeps track of the number of neighbours proposed to in the current tied rank of begin
+
+Suggestions for the existing README.md
+
+For adding new files or classes 
+1) Save your .cc file under the lib directory
+2) Save your .h file under the include directory
+3) Add your .cc file to CMakeLists.txt in lib under add_library
+
+
+For adding test files 
+1) Create a Test<FileName>.cc file in test directory
+2) Add your .cc test file to CMakeLists.txt in test under add_executable
+
+Program to create Bipartite Graphs with both side quotas and ties in preference List - resources/many_rsm_test/generator.cc
+
+To run the above code
+
+g++ generator.cc -o generator
+./generator M N 
+
+where M is the size of A partition and N is size of B partition
+
+TESTING WITHOUT VERIFICATION OF OUTPUT
+
+We generated 120 test cases using generator.cc code and the input files are stored in resources/many_rsm_test/input using my.sh bash script
+
+We stored the corresponding output in resources/many_rsm_test/output by running test.sh bash script in build folder
+
+
+TESTING WITH VERIFICATION
+
+In the resources folder we have added some manual testcases starting with many_critical_rsm* 
+The outputs for these test cases have been verified using the verify function in the test/TestManyToManyCriticalRSM.cc file
+The test cases for verify function is also included in the same file.
