@@ -2,7 +2,7 @@ Flag used for ManyToManyCriticalRSM is c
 Eg 
 $ ./graphmatching -A -c -i "../resources/many_rsm_test/input/input_0.txt" -o "../resources/many_rsm_test/output/output_0.txt"
  
-
+Note: This Implementation of Many To Many Critical RSM assumes that the upper quota of the proposing side is 1.
 Explanation of used datastructures in ManyToManyCriticalRSM.cc 
 
 In ties_propose we have used the existing datastructure of vertexBookKeeping for going through the Pref List 
